@@ -2,6 +2,8 @@
 
 **A real transformer running on a 1 MHz Commodore 64.**
 
+![Soul Player C64 running on a 1983 PAL C64](docs/screenshot.jpg)
+
 ```
   .--------.
   | O    O  |
