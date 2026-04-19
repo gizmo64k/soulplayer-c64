@@ -118,7 +118,6 @@ soulplayer-c64/
 ├── build.py              - assemble the C64 binary
 ├── test.py               - run all tests
 ├── soulchat.py           - chat in your terminal
-├── export_web.py         - export soul for the web demo
 │
 ├── data/
 │   └── example_corpus.txt
