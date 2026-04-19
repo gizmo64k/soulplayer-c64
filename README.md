@@ -17,7 +17,7 @@ YOU> hey
 C64> HELLO! RE SOUNDS ME. MEFUL!
 ```
 
-A 2-layer decoder-only transformer - the same architecture behind ChatGPT, Claude, and Gemini - implemented in hand-written 6502 assembly and running on an unmodified Commodore 64. ~25,000 int8 parameters. Real multi-head causal self-attention, real softmax, real RMSNorm. About 60 seconds per token. The whole thing fits on a floppy disk with room to spare.
+A 2-layer decoder-only transformer - the same architecture behind ChatGPT, Claude, and Gemini - implemented in hand-written 6502/6510 assembly and running on an unmodified Commodore 64. ~25,000 int8 parameters. Real multi-head causal self-attention, real softmax, real RMSNorm. About 60 seconds per token. The whole thing fits on a floppy disk with room to spare.
 
 ## Architecture
 
@@ -82,7 +82,7 @@ Training resumes automatically if checkpoints exist from a previous run.
 python build.py
 ```
 
-This assembles all 6502 routines, embeds your trained weights, and writes `disk/soulplayer.prg` and `disk/soulplayer.d64`.
+This assembles all 6502/6510 routines, embeds your trained weights, and writes `disk/soulplayer.prg` and `disk/soulplayer.d64`.
 
 ### Run it
 
@@ -105,10 +105,10 @@ Runs the same integer arithmetic as the C64, just faster.
 
 ```bash
 python test.py           # full suite (~90 tests, ~30 seconds)
-python test.py --quick   # skip 6502 assembly tests
+python test.py --quick   # skip 6502/6510 assembly tests
 ```
 
-Tests verify the entire chain: float reference → integer reference → memory-faithful shadow → 6502 assembly routines → build round-trip.
+Tests verify the entire chain: float reference → integer reference → memory-faithful shadow → 6502/6510 assembly routines → build round-trip.
 
 ## What's in the repo
 
@@ -133,7 +133,7 @@ soulplayer-c64/
 └── src/                   - the engine
     ├── numerics.py        - ground truth: fixed-point math + forward pass
     ├── soul_io.py         - .bin weight file format
-    ├── shadow.py          - memory-faithful Python shadow of the 6502
+    ├── shadow.py          - memory-faithful Python shadow of the 6502/6510
     ├── assembler.py       - mini 6502 assembler (labels, patches, far branches)
     ├── cpu6502.py         - minimal 6502 interpreter for testing
     ├── asm_matvec.py      - 6502 matrix-vector multiply
