@@ -127,6 +127,8 @@ soulplayer-c64/
 │   ├── tokenizer.json     - BPE tokenizer (128 tokens)
 │   └── checkpoints/       - all saved training checkpoints
 ├── disk/
+│   ├── meful.d64          - original release, disk image
+│   └── meful.prg          - original release, raw PRG
 │   ├── soulplayer.d64     - ready-to-run disk image
 │   └── soulplayer.prg     - raw PRG
 └── src/                   - the engine
