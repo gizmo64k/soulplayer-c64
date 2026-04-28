@@ -1,7 +1,7 @@
 # Soul Player C64
 
 **A real transformer running on a 1 MHz Commodore 64.**
-
+**And apparently on the Amstrad CPC, too! -> https://github.com/G1D30N/soulplayer-cpc **
 ```
    .-------.
   | O     O |
